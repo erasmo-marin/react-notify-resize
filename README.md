@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-$ npm install --save @zippytech/react-notify-resize
+$ npm install --save @zippytech/react-notify-resize-pro
 ```
 
 ## Intro
@@ -22,7 +22,7 @@ Or it can be used as a higher-order function that takes your component and retur
 
 ```jsx
 import React, { Component } from 'react'
-import { NotifyResize } from '@zippytech/react-notify-resize'
+import { NotifyResize } from '@zippytech/react-notify-resize-pro'
 
 class MyComponent extends Component {
   render(){
@@ -48,7 +48,7 @@ class MyComponent extends Component {
 #### NotifyResize higher-order function
 
 ```jsx
-import notifyResize from '@zippytech/react-notify-resize'
+import notifyResize from '@zippytech/react-notify-resize-pro'
 
 class MyComponent extends React.Component {
 
