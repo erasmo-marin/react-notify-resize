@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-$ npm install --save @zippytech/react-notify-resize-pro
+$ npm install --save @zippytech/react-notify-resize
 ```
 
 ## Intro
@@ -22,7 +22,7 @@ Or it can be used as a higher-order function that takes your component and retur
 
 ```jsx
 import React, { Component } from 'react'
-import { NotifyResize } from '@zippytech/react-notify-resize-pro'
+import { NotifyResize } from '@zippytech/react-notify-resize'
 
 class MyComponent extends Component {
   render(){
@@ -48,7 +48,7 @@ class MyComponent extends Component {
 #### NotifyResize higher-order function
 
 ```jsx
-import notifyResize from '@zippytech/react-notify-resize-pro'
+import notifyResize from '@zippytech/react-notify-resize'
 
 class MyComponent extends React.Component {
 
@@ -90,6 +90,6 @@ app.refs.notifier.component
 
 Not the most elegant access chain, but you can always use the plain component instead of the higher-order function.
 
-## License
+## LICENSE
 
-#### Commercial
+#### [Apache2](./LICENSE)

@@ -1,6 +1,6 @@
 {
-  "name": "@zippytech/react-notify-resize-pro",
-  "version": "2.0.4",
+  "name": "@zippytech/react-notify-resize",
+  "version": "2.1.0",
   "description": "React Component that notifies you whenever it is resized",
   "main": "lib/index.js",
   "scripts": {
