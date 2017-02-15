@@ -1,6 +1,6 @@
 {
   "name": "@zippytech/react-notify-resize",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "React Component that notifies you whenever it is resized",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zippytech/react-notify-resize-pro.git"
+    "url": "git+https://github.com/zippytech/react-notify-resize.git"
   },
   "keywords": [
     "react",
@@ -25,9 +25,9 @@
   "author": "Zippy Technologies <contact@zippyui.com>",
   "license": "Commercial",
   "bugs": {
-    "url": "https://github.com/zippytech/react-notify-resize-pro/issues"
+    "url": "https://github.com/zippytech/react-notify-resize/issues"
   },
-  "homepage": "https://github.com/zippytech/react-notify-resize-pro#readme",
+  "homepage": "https://github.com/zippytech/react-notify-resize#readme",
   "dependencies": {
     "@zippytech/react-class": "^4.0.4",
     "shallowequal": "0.2.2"
