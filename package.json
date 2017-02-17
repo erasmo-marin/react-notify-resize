@@ -23,7 +23,7 @@
     "element query"
   ],
   "author": "Zippy Technologies <contact@zippyui.com>",
-  "license": "Commercial",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/zippytech/react-notify-resize/issues"
   },
