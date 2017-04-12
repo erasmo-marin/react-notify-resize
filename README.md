@@ -18,6 +18,8 @@ Or it can be used as a higher-order function that takes your component and retur
 
 ## Usage
 
+In order to use `@zippytech/react-notify-resize - 3.0.0` you need to have `react` and `prop-types` packages installed in your app, since those are peer dependencies for this package. You can use any React version `>=15.0.0`
+
 #### NotifyResize component
 
 ```jsx
@@ -68,7 +70,7 @@ class MyComponent extends React.Component {
   }
 }
 
-const MyNotifiedComponent =  notifyResize(MyComponent)
+const MyNotifiedComponent = notifyResize(MyComponent)
 
 class App extends React.Component {
   render(){

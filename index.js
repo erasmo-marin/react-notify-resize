@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-
 import React from 'react';
 import { render } from 'react-dom';
-import Component from 'react-class';
+import Component from '@zippytech/react-class';
 
 import notifyResize, { NotifyResize } from './src';
 
@@ -79,25 +78,30 @@ class App extends Component {
   }
 
   render() {
-    return <div style={{height: '100%', width: '100%', position: 'relative'}}>
-      <div style={{position: 'relative', height: 25}}>
-        <NotifyResize onResize={size => console.log('resized to ', size)} />
-      </div>
-      <p>
-        Resize parent
-        <button onClick={() => {
-          this.setState({
-            width: this.state.width + 20,
-            height: this.state.height + 20,
-          })
-        }}>More</button>
-        <button onClick={() => {
-          this.setState({
-            width: this.state.width - 20,
-            height: this.state.height - 20,
-          })
-        }}>Less</button>
-      </p>
+    return (
+      <div style={{ height: '100%', width: '100%', position: 'relative' }}>
+        <div style={{ position: 'relative', height: 25 }}>
+          <NotifyResize onResize={size => console.log('resized to ', size)} />
+        </div>
+        <p>
+          Resize parent
+          <button
+            onClick={() => {
+              this.setState({
+                width: this.state.width + 20,
+                height: this.state.height + 20
+              });
+            }}
+          >More</button>
+          <button
+            onClick={() => {
+              this.setState({
+                width: this.state.width - 20,
+                height: this.state.height - 20
+              });
+            }}
+          >Less</button>
+        </p>
 
         <div style={{ marginTop: 20 }}>
           <div

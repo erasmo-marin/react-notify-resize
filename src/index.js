@@ -14,9 +14,14 @@
  * limitations under the License.
  */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { func, bool } from 'prop-types';
 import shallowequal from 'shallowequal';
 import autoBind from '@zippytech/react-class/autoBind';
+
+import uglified from '@zippytech/uglified';
+
+const showWarnings = !uglified;
 
 const notifyResizeStyle = {
   position: 'absolute',
@@ -158,7 +163,7 @@ class ZippyNotifyResize extends React.Component {
     const {
       notifyResizeWidth,
       notifyResizeHeight
-    } = this.notifyResizeSize = this.getDimensions();
+    } = (this.notifyResizeSize = this.getDimensions());
 
     // Resize tool will be bigger than it's parent by 1 pixel in each direction
     this.setState({
@@ -241,21 +246,25 @@ class ZippyNotifyResize extends React.Component {
 }
 
 ZippyNotifyResize.propTypes = {
-  onResize: PropTypes.func,
-  onMount: PropTypes.func,
-  notifyOnMount: PropTypes.bool
+  onResize: func,
+  onMount: func,
+  notifyOnMount: bool
 };
 
 const notifyResize = Cmp => class NotifyResizeWrapper extends React.Component {
   constructor(props) {
     super(props);
     autoBind(this);
+
+    this.refComponent = c => {
+      this.component = c;
+    };
   }
   componentDidMount() {
-    const component = this.component = this.refs.component;
+    const component = this.component;
 
     // check if they are mounted
-    if (!this.notifyResize) {
+    if (!this.notifyResize && showWarnings) {
       console.warn(
         'For notifyResize to work you must render resizeTool from {props.resizeTool}'
       );
@@ -264,6 +273,16 @@ const notifyResize = Cmp => class NotifyResizeWrapper extends React.Component {
 
   onNotifyResizeMount(notifier) {
     this.notifyResize = notifier;
+  }
+
+  onResize(...args) {
+    if (typeof this.props.onResize === 'function') {
+      this.props.onResize(...args);
+    }
+
+    if (typeof this.component.onResize === 'function') {
+      this.component.onResize(...args);
+    }
   }
 
   render() {
@@ -275,17 +294,9 @@ const notifyResize = Cmp => class NotifyResizeWrapper extends React.Component {
       />
     );
 
-    return <Cmp ref="component" {...this.props} resizeTool={resizeTool} />;
-  }
-
-  onResize(...args) {
-    if (typeof this.props.onResize === 'function') {
-      this.props.onResize(...args);
-    }
-
-    if (typeof this.refs.component.onResize === 'function') {
-      this.refs.component.onResize(...args);
-    }
+    return (
+      <Cmp ref={this.refComponent} {...this.props} resizeTool={resizeTool} />
+    );
   }
 };
 

@@ -33,3 +33,5 @@ node_modules
 /index.js
 .editorconfig
 .babelrc
+/.idea
+/src
